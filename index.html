@@ -2,23 +2,77 @@
   <head>
     <title>Mi Shoppu</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Shoppu</title>
+    <meta name="description" content="Tu shopping digital.">
+
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+    <link rel="apple-touch-icon" href="public/logo_favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Muli:300,400,500,600">
+
+    <meta property="og:url" content="https://mishoppu.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mi Shoppu">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="public/logo_favicon.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="mishoppu.com">
+    <meta property="twitter:url" content="https://mishoppu.com">
+    <meta name="twitter:title" content="Mi Shoppu">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="public/logo_favicon.png">
+
     <style>
       body {
         background: #FFF;
         color: #ef1515;
         padding: 1rem;
+        text-align: center;
       }
       
-      
       @keyframes fadeIn {
-        from {top: 20%; opacity: 0;}
-        to {top: 100; opacity: 1;}
+        from {opacity: 0;}
+        to {opacity: 1;}
         
       }
       
       @-webkit-keyframes fadeIn {
-        from {top: 0%; opacity: 0;}
-        to {top: 100; opacity: 1;}
+        from { opacity: 0;}
+        to { opacity: 1;}
+      }
+
+      @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-8px);
+        }
+        60% {
+          transform: translateY(-4px);
+        }
+      }
+
+      @-webkit-keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+          -webkit-transform: translateY(0);
+        }
+        40% {
+          -webkit-transform: translateY(-8px);
+        }
+        60% {
+          -webkit-transform: translateY(-4px);
+        }
+      }
+
+      @keyframes fadeInLeft {
+        from {transform: translate(-150%, -50%); opacity: 0;}
+        to {transform: translate(-50%, -50%); opacity: 1;}
+      }
+
+      @-webkit-keyframes fadeInLeft {
+        from {-webkit-transform: translate(-150%, -50%); opacity: 0;}
+        to {-webkit-transform: translate(-50%, -50%); opacity: 1;}
       }
       
       .wrapper {
@@ -27,9 +81,24 @@
         top: 50%;
         transform: translate(-50%, -50%);
         -webkit-transform: translate(-50%, -50%);
-        animation: fadeIn 1000ms ease;
-        -webkit-animation: fadeIn 1000ms ease;
-        
+        animation: fadeInLeft 1000ms ease;
+        -webkit-animation: fadeInLeft 1000ms ease;
+        will-change: transform, opacity;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+      }
+
+      .logo {
+        max-width: 400px;
+        animation: fadeIn 1500ms ease;
+        -webkit-animation: fadeIn 1500ms ease;
+        will-change: opacity;
+        margin: 0 auto;
+        display: inline-block;
+      }
+
+      p {
+        font-size: 1.6rem;
       }
       
       h1 {
@@ -44,17 +113,26 @@
       }
       
       .dot {
-          content:"";
-          border-color: #ef1515;
-          color: white;
-          border: 2px solid #ef1515;
-          width: .5rem;
-          height: .5rem;
-          display: inline-block;
-          border-radius: 50%;
-          position: relative;
-          bottom: 0.37rem;
-          left: .25rem;
+        color: white;
+        width: .5rem;
+        height: .5rem;
+        display: inline-block;
+        border-radius: 50%;
+        position: relative;
+        left: .25rem;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        background: red;
+      }
+
+      .wrapper:hover .dot{
+          animation: bounce 1s infinite;
+          -webkit-animation: bounce 1s infinite;
+      }
+
+      .logo:hover ~ .wrapper .dot {
+        animation: bounce 1s infinite;
+        -webkit-animation: bounce 1s infinite;
       }
       
       p {
@@ -66,9 +144,14 @@
     </style>
   </head>
   <body>
+    <img
+      src="public/logo_favicon.png" 
+      alt="Mi Shoppu logo"
+      class="logo"
+    >
     <div class="wrapper">
-      <h1>Proximamente<span class="dot"></span></h1>
-      <p>Mi Shoppu</p>
+      <h1>Mi Shoppu</h1>
+      <p>Proximamente<span class="dot"></span></p>
      </div>
   </body>
 </html>
