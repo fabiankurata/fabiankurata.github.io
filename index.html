@@ -3,8 +3,8 @@
     <title>MiShoppu</title>
     <style>
       body {
-        background: #00091B;
-        color: #fff;
+        background: #FFF;
+        color: #ef1515;
       }
       
       
@@ -38,10 +38,22 @@
         line-height: 1;
         font-weight: 700;
         text-align: center;
+        display: flex;
+        align-items: flex-end;
       }
       
       .dot {
-        color: #4FEBFE;
+          content:"";
+          border-color: #ef1515;
+          color: white;
+          border: 2px solid #ef1515;
+          width: .5rem;
+          height: .5rem;
+          display: inline-block;
+          border-radius: 50%;
+          position: relative;
+          bottom: 0.37rem;
+          left: .25rem;
       }
       
       p {
@@ -49,13 +61,12 @@
         margin: 18px;
         font-family: 'Muli', sans-serif;
         font-weight: normal;
-        
       }
     </style>
   </head>
   <body>
     <div class="wrapper">
-      <h1>coming soon<span class="dot">.</span></h1>
+      <h1>coming soon<span class="dot"></span></h1>
       <p>Mi Shoppu</p>
      </div>
   </body>
